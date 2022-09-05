@@ -38,7 +38,8 @@ public class WorldInteraction : MonoBehaviour
             GameObject interactedObject = interactionInfo.collider.gameObject;//gets the gameObject that raycast hits
             if(interactedObject.tag == "InteractableObj")
             {
-                Debug.Log("interactable object");
+                //Debug.Log("interactable object");
+                interactedObject.GetComponent<Interactable>().MoveToInteraction(playerAgent);
             }
             else
             {
