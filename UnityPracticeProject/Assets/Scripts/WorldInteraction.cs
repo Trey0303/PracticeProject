@@ -36,13 +36,14 @@ public class WorldInteraction : MonoBehaviour
         RaycastHit interactionInfo;//stores ray hit information information
         if (Physics.Raycast(interactionRay, out interactionInfo, Mathf.Infinity)){//gives my 'interationRay' info to physics.raycast. physics.raycast sends its result to 'interactionInfo'. Mathf.Infinity is just to set an infinite range for my ray so that it wont stop checking until it hits something
             GameObject interactedObject = interactionInfo.collider.gameObject;//gets the gameObject that raycast hits
-            if(interactedObject.tag == "InteractableObj")
+            if(interactedObject.tag == "InteractableObj")//if player wants to interact with somthing
             {
                 //Debug.Log("interactable object");
                 interactedObject.GetComponent<Interactable>().MoveToInteraction(playerAgent);
             }
-            else
+            else//if player is just walking
             {
+                playerAgent.stoppingDistance = 0;
                 playerAgent.destination = interactionInfo.point;
             }
         }
