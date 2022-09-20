@@ -25,15 +25,41 @@ public class BaseStat
 
     public void RemoveStatBonus(StatBonus statBonus)
     {
-        this.BaseAdditives.Remove(statBonus);
+        this.BaseAdditives.Remove(BaseAdditives.Find(x => x.BonusValue == statBonus.BonusValue));
     }
 
+    /// <summary>
+    /// GetCalculatedStatValue() Example: 
+    ///          
+    ///      Values-
+    ///          BaseAdditive{3,4,5}
+    ///          finalValue = 0;
+    ///          baseValue = 10;         
+    /// 
+    ///      foreach lambda expression:
+    ///             0               3 
+    ///         1. finalValue + BaseAdditive[x = 0] = 3
+    ///          
+    ///             3               4
+    ///         2.finalValue + BaseAdditive[x = 1] = 7
+    ///         
+    ///             7               5
+    ///         3.finalValue + BaseAdditive[x = 2] = 12
+    ///
+    ///             12              10
+    ///         4.finalValue + baseValue = 22
+    ///         
+    ///         5.return finalValue(22)
+    /// </summary>
+    /// <returns></returns>
     public int GetCalculatedStatValue()
     {
-        this.BaseAdditives.ForEach(x => this.FinalValue += x.BonusValue);//????
+        this.FinalValue = 0;//reset finalValue
+        //for each buff and debuff added to the baseAdditives list add it all up to the finalValue
+        this.BaseAdditives.ForEach(x => this.FinalValue += x.BonusValue);//foreach lambda expression????(adds the bonusValue from the statBonus script to the FinalValue)
 
-        FinalValue += BaseValue;
+        FinalValue += BaseValue;//add the baseValue to the finalValue as well
 
-        return FinalValue;
+        return FinalValue;//return the final calculation from adding bonus and base values
     }
 }
