@@ -1329,6 +1329,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAgent: {fileID: 0}
+  dialogue:
+  - theres a cave up north of here.
+  - be wary, it is said that the cave is very dangerous.
+  - very few who have entered ever return.
+  name: Joe Worrier
 --- !u!1001 &279095804
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6623,6 +6628,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b67c516d32e6c449a08914f6b8c68d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialoguePanel: {fileID: 709706084}
+  npcName: 
+  dialogueLines: []
 --- !u!4 &1930290297
 Transform:
   m_ObjectHideFlags: 0
