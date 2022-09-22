@@ -4,6 +4,6 @@ using UnityEngine;
 
 public interface IWeapon//intreface??
 {
-    //public List<BaseStat> Stats { get; set; }
-    //void PerformAttack();
+    List<BaseStat> Stats { get; set; }
+    void PerformAttack();
 }
