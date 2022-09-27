@@ -7,11 +7,13 @@ public class PlayerWeaponController : MonoBehaviour
     public GameObject playerHand;
     public GameObject EquippedWeapon { get; set; }
 
+    Transform spawnProjectile;
     IWeapon equippedWeapon;
     CharacterStat characterStats;
 
     private void Start()
     {
+        spawnProjectile = transform.FindChild("ProjectileSpawn");
         characterStats = GetComponent<CharacterStat>();
     }
 
@@ -29,6 +31,10 @@ public class PlayerWeaponController : MonoBehaviour
         
         //cant get this bit of code to work(edit: needed to equip the sword script to the sword GameObject in the Weapons folder)
         equippedWeapon = EquippedWeapon.GetComponent<IWeapon>();
+        if(EquippedWeapon.GetComponent<IProjectileWeapon>() != null){
+            EquippedWeapon.GetComponent<IProjectileWeapon>().ProjectileSpawn = spawnProjectile;
+        }
+        EquippedWeapon.GetComponent<IProjectileWeapon>().ProjectileSpawn = spawnProjectile;
         equippedWeapon.Stats = itemToEquip.Stats;//copy over weapon stats to instantiated weapon
         
         
