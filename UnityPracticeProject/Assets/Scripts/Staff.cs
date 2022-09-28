@@ -6,7 +6,7 @@ public class Staff : MonoBehaviour, IWeapon, IProjectileWeapon
 {
     private Animator animator;
     public List<BaseStat> Stats { get; set; }
-    public Transform ProjectileSpawn { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+    public Transform ProjectileSpawn { get; set; }
 
     Fireball fireball;
 

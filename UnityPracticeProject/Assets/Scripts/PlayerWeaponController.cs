@@ -13,7 +13,11 @@ public class PlayerWeaponController : MonoBehaviour
 
     private void Start()
     {
-        spawnProjectile = transform.FindChild("ProjectileSpawn");
+        //should probably figure out a better way to find children transform
+        //gameObject.Find() searches through the whole hierarchy which I dont really need in this situation. I just want it to find a specific childs transform in a gameObject that has this script attached.
+        //the reason that transfom.Find() isnt working for me is because I had 'ProjectileSpawn' as a child of playermodel instead of player
+        spawnProjectile = transform.Find("ProjectileSpawn");
+        Debug.Log(spawnProjectile.position);
         characterStats = GetComponent<CharacterStat>();
     }
 
@@ -34,7 +38,6 @@ public class PlayerWeaponController : MonoBehaviour
         if(EquippedWeapon.GetComponent<IProjectileWeapon>() != null){
             EquippedWeapon.GetComponent<IProjectileWeapon>().ProjectileSpawn = spawnProjectile;
         }
-        EquippedWeapon.GetComponent<IProjectileWeapon>().ProjectileSpawn = spawnProjectile;
         equippedWeapon.Stats = itemToEquip.Stats;//copy over weapon stats to instantiated weapon
         
         
