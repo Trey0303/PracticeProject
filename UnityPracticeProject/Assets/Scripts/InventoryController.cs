@@ -5,14 +5,18 @@ using UnityEngine;
 public class InventoryController : MonoBehaviour
 {
     public PlayerWeaponController playerWeaponController;
+    public ConsumableController consumableController;
     public Item sword;
+    public Item potionLog;
 
     private void Start()
     {
         playerWeaponController = GetComponent<PlayerWeaponController>();
+        consumableController = GetComponent<ConsumableController>();
         List<BaseStat> swordStats = new List<BaseStat>();
         swordStats.Add(new BaseStat(6, "Power", "your power level"));
-        sword = new Item(swordStats, "Staff");
+        sword = new Item(swordStats, "Sword");
+        potionLog = new Item(new List<BaseStat>(), "potionLog", "drink this to log something", "Drink", "Log Potion", false);
     }
 
     private void Update()
@@ -20,6 +24,9 @@ public class InventoryController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.V))
         {
             playerWeaponController.EquipWeapon(sword);
+            consumableController.ConsumeItem(potionLog);
         }
+
+        
     }
 }
