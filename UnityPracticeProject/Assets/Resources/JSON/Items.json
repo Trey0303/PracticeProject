@@ -1,6 +1,6 @@
 [
   {
-    "objectSlug": "sword",
+    "objectSlug": "Sword",
     "itemName": "Sword",
     "description": "A long, sharp blade.",
     "itemType": "Weapon",
@@ -25,7 +25,7 @@
     ]
   },
   {
-    "objectSlug": "staff",
+    "objectSlug": "Staff",
     "itemName": "Cactus",
     "description": "A long, sharp cactus.",
     "itemType": "Weapon",
@@ -50,8 +50,8 @@
     ]
   },
   {
-    "objectSlug": "potion_log",
-    "itemName": "Log Potion",
+    "objectSlug": "PotionLog",
+    "itemName": "PotionLog",
     "description": "A potion that logs something to the console.",
     "itemType": "Consumable",
     "actionName": "Drink",
