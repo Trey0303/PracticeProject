@@ -18,6 +18,17 @@ public class InventoryUI : MonoBehaviour
         inventoryPanel.gameObject.SetActive(false);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            menuIsActive = !menuIsActive;
+            inventoryPanel.gameObject.SetActive(menuIsActive);
+        }
+
+
+    }
+
     // Update is called once per frame
     public void ItemAdded(Item item)
     {
