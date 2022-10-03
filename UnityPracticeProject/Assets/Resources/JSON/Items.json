@@ -26,7 +26,7 @@
   },
   {
     "objectSlug": "Staff",
-    "itemName": "Cactus",
+    "itemName": "Staff",
     "description": "A long, sharp cactus.",
     "itemType": "Weapon",
     "actionName": "Equip",
