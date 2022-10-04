@@ -10,7 +10,7 @@ source/credit:
 
 -https://github.com/GameGrind/Json.Net.Unity3D (thirdparty JSON Asset)
 
--https://game-icons.net/1x1/skoll/stiletto.html(game icons)
+-https://game-icons.net/1x1/skoll/stiletto.html (game icons)
 	 icons used:
 		-https://game-icons.net/1x1/skoll/stiletto.html (Stiletto iconby Skoll under CC BY 3.0 https://creativecommons.org/licenses/by/3.0/)
 		-https://game-icons.net/1x1/lorc/drink-me.html#download (Drink me iconby Lorc under CC BY 3.0 https://creativecommons.org/licenses/by/3.0/)
