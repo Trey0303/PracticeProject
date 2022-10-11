@@ -1824,6 +1824,7 @@ MonoBehaviour:
   curHealth: 0
   power: 0
   toughness: 0
+  maxHealth: 20
 --- !u!1001 &418139041
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3259,8 +3260,8 @@ GameObject:
   - component: {fileID: 611316909}
   - component: {fileID: 611316911}
   - component: {fileID: 611316912}
-  - component: {fileID: 611316910}
   - component: {fileID: 611316913}
+  - component: {fileID: 611316910}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -3327,7 +3328,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 611316906}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 648e7d0491bbe6a40b8e7f67f6e4aa7f, type: 3}
+  m_Script: {fileID: 11500000, guid: c19c8956ead6bc249b364bf0ef0f21ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &611316911

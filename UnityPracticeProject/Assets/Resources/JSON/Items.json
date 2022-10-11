@@ -12,15 +12,15 @@
         "BaseValue": 25,
         "StatName": "Power"
       },
-      //{
-      //  "StatType": "Toughness",
-      //  "BaseValue": 4,
-      //  "StatName": "Tougness"
-      //},
+      {
+        "StatType": "Toughness",
+        "BaseValue": 4,
+        "StatName": "Tougness"
+      },
       {
         "StatType": "AttackSpeed",
         "BaseValue": 4,
-        "StatName": "Vitality"
+        "StatName": "Attack Speed"
       }
     ]
   },
@@ -37,15 +37,15 @@
         "BaseValue": 800,
         "StatName": "Power"
       },
-      //{
-      //  "StatType": "Toughness",
-      //  "BaseValue": 2,
-      //  "StatName": "Tougness"
-      //},
+      {
+        "StatType": "Toughness",
+        "BaseValue": 2,
+        "StatName": "Tougness"
+      },
       {
         "StatType": "AttackSpeed",
         "BaseValue": 1,
-        "StatName": "Vitality"
+        "StatName": "Attack Speed"
       }
     ]
   },

@@ -6,6 +6,7 @@ public class Staff : MonoBehaviour, IWeapon, IProjectileWeapon
 {
     private Animator animator;
     public List<BaseStat> Stats { get; set; }
+    public CharacterStat CharacterStat { get; set; }
     public Transform ProjectileSpawn { get; set; }
 
     Fireball fireball;

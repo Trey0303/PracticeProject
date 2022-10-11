@@ -18,8 +18,8 @@ public class PlayerWeaponController : MonoBehaviour
         //the reason that transfom.Find() isnt working for me is because I had 'ProjectileSpawn' as a child of playermodel instead of player
         //video reference for later: https://www.youtube.com/watch?v=KhvokgokrQE
         spawnProjectile = transform.Find("ProjectileSpawn");
-        Debug.Log(spawnProjectile.position);
-        characterStats = GetComponent<CharacterStat>();
+        //Debug.Log(spawnProjectile.position);
+        characterStats = GetComponent<Player>().characterStat;
     }
 
     public void EquipWeapon(Item itemToEquip)
@@ -36,6 +36,7 @@ public class PlayerWeaponController : MonoBehaviour
         
         //cant get this bit of code to work(edit: needed to equip the sword script to the sword GameObject in the Weapons folder)
         equippedWeapon = EquippedWeapon.GetComponent<IWeapon>();
+        equippedWeapon.CharacterStat = characterStats;
         if(EquippedWeapon.GetComponent<IProjectileWeapon>() != null){
             EquippedWeapon.GetComponent<IProjectileWeapon>().ProjectileSpawn = spawnProjectile;
         }
@@ -43,7 +44,7 @@ public class PlayerWeaponController : MonoBehaviour
         
         
         characterStats.AddStatBonus(itemToEquip.Stats);
-        Debug.Log(equippedWeapon.Stats[0].GetCalculatedStatValue());
+        //Debug.Log(equippedWeapon.Stats[0].GetCalculatedStatValue());
     }
 
     private void Update()
