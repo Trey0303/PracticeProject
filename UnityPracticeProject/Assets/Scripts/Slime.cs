@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Slime : MonoBehaviour, IEnemy
 {
-    public float curHealth, power, toughness;
+    NavMeshAgent navAgent; 
+    public float curHealth;
 
     public float maxHealth = 20;
 
@@ -12,6 +14,7 @@ public class Slime : MonoBehaviour, IEnemy
 
     void Start()
     {
+        navAgent = GetComponent<NavMeshAgent>();
         characterStat = new CharacterStat(6,10,2);
         curHealth = maxHealth;
     }
