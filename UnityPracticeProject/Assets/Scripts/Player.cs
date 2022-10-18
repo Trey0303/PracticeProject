@@ -25,10 +25,11 @@ public class Player : MonoBehaviour
             Die();
         }
 
-        void Die()
-        {
-            Debug.Log("player dead. reset health");
-            curHealth = maxHealth;
-        }
+    }
+
+    void Die()
+    {
+        Debug.Log("player dead. reset health");
+        curHealth = maxHealth;
     }
 }

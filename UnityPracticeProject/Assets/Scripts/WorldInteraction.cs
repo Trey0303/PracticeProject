@@ -22,7 +22,7 @@ public class WorldInteraction : MonoBehaviour
     private void Update()
     {
         //                                      this checks if you are hovering over UI or not
-        if (Input.GetMouseButtonDown(0) && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
+        if (Input.GetMouseButton(0) && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
         {
             GetInteraction();
         }
