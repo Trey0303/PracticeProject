@@ -6,8 +6,9 @@ public class Staff : MonoBehaviour, IWeapon, IProjectileWeapon
 {
     private Animator animator;
     public List<BaseStat> Stats { get; set; }
-    public CharacterStat CharacterStat { get; set; }
+    //public CharacterStat CharacterStat { get; set; }
     public Transform ProjectileSpawn { get; set; }
+    public int CurrentDamage { get ; set ; }
 
     Fireball fireball;
 
@@ -16,7 +17,7 @@ public class Staff : MonoBehaviour, IWeapon, IProjectileWeapon
         fireball = Resources.Load<Fireball>("Weapons/Projectiles/Fireball");
         animator = GetComponent<Animator>();
     }
-    public void PerformAttack()
+    public void PerformAttack(int damage)
     {
         Debug.Log("staff attack!");
         
@@ -34,4 +35,6 @@ public class Staff : MonoBehaviour, IWeapon, IProjectileWeapon
         Fireball fireballInstance = Instantiate(fireball, ProjectileSpawn.position, ProjectileSpawn.rotation);
         fireballInstance.Direction = ProjectileSpawn.forward;
     }
+
+    
 }

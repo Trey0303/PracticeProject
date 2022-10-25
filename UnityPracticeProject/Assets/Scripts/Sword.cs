@@ -7,13 +7,15 @@ public class Sword : MonoBehaviour, IWeapon
     private Animator animator;
     public List<BaseStat> Stats { get; set; }
     public CharacterStat CharacterStat { get; set; }
+    public int CurrentDamage { get; set; }
 
     void Start()
     {
         animator = GetComponent<Animator>();
     }
-    public void PerformAttack()
+    public void PerformAttack(int damage)
     {
+        CurrentDamage = damage;
         Debug.Log("sword attack!");
         animator.SetTrigger("BaseAttack");
     }
@@ -29,8 +31,9 @@ public class Sword : MonoBehaviour, IWeapon
         if(col.tag == "Enemy")
         {
             Debug.Log("Enemy hit");
-            col.GetComponent<IEnemy>().TakeDamage(CharacterStat.GetStat(BaseStat.BaseStatType.Power).GetCalculatedStatValue());
+            col.GetComponent<IEnemy>().TakeDamage(CurrentDamage);
             //col.GetComponent<IEnemy>().TakeDamage(Stats[0].GetCalculatedStatValue());
         }
     }
+
 }

@@ -27,6 +27,7 @@ public class InventoryController : MonoBehaviour
         playerWeaponController = GetComponent<PlayerWeaponController>();
         consumableController = GetComponent<ConsumableController>();
         GiveItem("Sword");
+        GiveItem("Staff");
         GiveItem("PotionLog");
         //List<BaseStat> swordStats = new List<BaseStat>();
         //swordStats.Add(new BaseStat(6, "Power", "your power level"));

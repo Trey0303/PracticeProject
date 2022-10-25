@@ -5,8 +5,9 @@ using UnityEngine;
 public interface IWeapon//intreface??
 {
     List<BaseStat> Stats { get; set; }
-    CharacterStat CharacterStat { get; set; }
-    void PerformAttack();
+    //CharacterStat CharacterStat { get; set; }
+    int CurrentDamage { get; set; }
+    void PerformAttack(int damage);
 
     void PerformSpecialAttack();
 }

@@ -8,6 +8,7 @@ public class PlayerWeaponController : MonoBehaviour
     public GameObject EquippedWeapon { get; set; }
 
     Transform spawnProjectile;
+    Item currentlyEquippedItem;
     IWeapon equippedWeapon;
     CharacterStat characterStats;
 
@@ -26,6 +27,8 @@ public class PlayerWeaponController : MonoBehaviour
     {
         if(EquippedWeapon != null)//if there is already a weapon in playerHand
         {
+            //add currently equipped weapon back to player inventory
+            InventoryController.Instance.GiveItem(currentlyEquippedItem.ObjectSlug);
             //remove weapon stat bonus from player stats then delete weapon from playerHand
             characterStats.RemoveStatBonus(EquippedWeapon.GetComponent<IWeapon>().Stats);
             Destroy(playerHand.transform.GetChild(0).gameObject);
@@ -36,13 +39,13 @@ public class PlayerWeaponController : MonoBehaviour
         
         //cant get this bit of code to work(edit: needed to equip the sword script to the sword GameObject in the Weapons folder)
         equippedWeapon = EquippedWeapon.GetComponent<IWeapon>();
-        equippedWeapon.CharacterStat = characterStats;
         if(EquippedWeapon.GetComponent<IProjectileWeapon>() != null){
             EquippedWeapon.GetComponent<IProjectileWeapon>().ProjectileSpawn = spawnProjectile;
         }
         equippedWeapon.Stats = itemToEquip.Stats;//copy over weapon stats to instantiated weapon
-        
-        
+
+        currentlyEquippedItem = itemToEquip;//updates reference to currently equipped item for later use
+
         characterStats.AddStatBonus(itemToEquip.Stats);
         //Debug.Log(equippedWeapon.Stats[0].GetCalculatedStatValue());
     }
@@ -61,11 +64,29 @@ public class PlayerWeaponController : MonoBehaviour
 
     public void PerformWeaponAttack()
     {
-        equippedWeapon.PerformAttack();
+        equippedWeapon.PerformAttack(CalculatedDamage());
     }
 
     public void PerformSpecialWeaponAttack()
     {
         equippedWeapon.PerformSpecialAttack();
+    }
+
+    private int CalculatedDamage()
+    {
+        int damageToDeal = (characterStats.GetStat(BaseStat.BaseStatType.Power).GetCalculatedStatValue() * 2) +
+            Random.Range(2, 8);
+        damageToDeal += CalculateCrit(damageToDeal);
+        Debug.Log("Damage dealt: " + damageToDeal);
+        return damageToDeal;
+    }
+
+    private int CalculateCrit(int damage) {
+        if(Random.value <= .10f)
+        {
+            int critDamage = (int)(damage * Random.Range(.5f, .75f));
+            return critDamage;
+        }
+        return 0;
     }
 }
