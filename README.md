@@ -15,3 +15,6 @@ source/credit:
 		-https://game-icons.net/1x1/skoll/stiletto.html (Stiletto iconby Skoll under CC BY 3.0 https://creativecommons.org/licenses/by/3.0/)
 		-https://game-icons.net/1x1/lorc/drink-me.html#download (Drink me iconby Lorc under CC BY 3.0 https://creativecommons.org/licenses/by/3.0/)
 		-https://game-icons.net/1x1/delapouite/crescent-staff.html#download (Crescent staff iconby Delapouite under CC BY 3.0 https://creativecommons.org/licenses/by/3.0/)
+		-https://game-icons.net/1x1/delapouite/sword-brandish.html (Sword brandish iconby Delapouite under CC BY 3.0)
+		-https://game-icons.net/1x1/delapouite/circle.html#download (Circle iconby Delapouite under CC BY 3.0)
+
