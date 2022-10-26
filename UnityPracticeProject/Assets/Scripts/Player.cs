@@ -6,14 +6,16 @@ public class Player : MonoBehaviour
 {
     public CharacterStat characterStat;
 
-    public float curHealth;
+    public int curHealth;
 
-    public float maxHealth;
+    public int maxHealth;
 
     private void Start()
     {
+        Debug.Log("Player init");
         curHealth = maxHealth;
         characterStat = new CharacterStat(10, 10, 10);
+        UIEventHandler.HealthChanged(this.curHealth, maxHealth);//Update health in UI
     }
 
     public void TakeDamage(int amount)
@@ -24,6 +26,7 @@ public class Player : MonoBehaviour
         {
             Die();
         }
+        UIEventHandler.HealthChanged(this.curHealth, this.maxHealth);//update health in UI
 
     }
 
@@ -31,5 +34,6 @@ public class Player : MonoBehaviour
     {
         Debug.Log("player dead. reset health");
         curHealth = maxHealth;
+        UIEventHandler.HealthChanged(this.curHealth, this.maxHealth);//update health in UI
     }
 }

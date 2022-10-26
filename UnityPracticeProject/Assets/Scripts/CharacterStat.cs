@@ -11,7 +11,7 @@ public class CharacterStat
         stats = new List<BaseStat>() {
             new BaseStat(BaseStat.BaseStatType.Power, power, "Power"),
             new BaseStat(BaseStat.BaseStatType.Toughness, toughness, "Toughness"),
-            new BaseStat(BaseStat.BaseStatType.AttackSpeed, attackSpeed, "AttackSpeed"),
+            new BaseStat(BaseStat.BaseStatType.AttackSpeed, attackSpeed, "Atk Spd"),
         };
     }
 

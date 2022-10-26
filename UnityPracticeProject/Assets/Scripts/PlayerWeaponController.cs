@@ -27,11 +27,7 @@ public class PlayerWeaponController : MonoBehaviour
     {
         if(EquippedWeapon != null)//if there is already a weapon in playerHand
         {
-            //add currently equipped weapon back to player inventory
-            InventoryController.Instance.GiveItem(currentlyEquippedItem.ObjectSlug);
-            //remove weapon stat bonus from player stats then delete weapon from playerHand
-            characterStats.RemoveStatBonus(EquippedWeapon.GetComponent<IWeapon>().Stats);
-            Destroy(playerHand.transform.GetChild(0).gameObject);
+            UnequipWeapon();
         }
 
         EquippedWeapon = Instantiate(Resources.Load<GameObject>("Weapons/" + itemToEquip.ObjectSlug), playerHand.transform.position, playerHand.transform.rotation);//spawn weapon from prefab/weapons folder into playerHand
@@ -48,6 +44,18 @@ public class PlayerWeaponController : MonoBehaviour
 
         characterStats.AddStatBonus(itemToEquip.Stats);
         //Debug.Log(equippedWeapon.Stats[0].GetCalculatedStatValue());
+        UIEventHandler.ItemEquipped(itemToEquip);
+        UIEventHandler.StatsChanged();
+    }
+
+    public void UnequipWeapon()
+    {
+        //add currently equipped weapon back to player inventory
+        InventoryController.Instance.GiveItem(currentlyEquippedItem.ObjectSlug);
+        //remove weapon stat bonus from player stats then delete weapon from playerHand
+        characterStats.RemoveStatBonus(equippedWeapon.Stats);
+        Destroy(playerHand.transform.GetChild(0).gameObject);
+        UIEventHandler.StatsChanged();
     }
 
     private void Update()
