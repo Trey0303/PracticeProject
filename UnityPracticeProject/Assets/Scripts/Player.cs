@@ -9,13 +9,16 @@ public class Player : MonoBehaviour
     public int curHealth;
 
     public int maxHealth;
+    public PlayerLevel playerLevel { get; set; }
 
     private void Start()
     {
+        playerLevel = GetComponent<PlayerLevel>();
         Debug.Log("Player init");
         curHealth = maxHealth;
         characterStat = new CharacterStat(10, 10, 10);
         UIEventHandler.HealthChanged(this.curHealth, maxHealth);//Update health in UI
+        UIEventHandler.PlayerLevelChanged();
     }
 
     public void TakeDamage(int amount)

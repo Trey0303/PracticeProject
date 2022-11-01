@@ -6,10 +6,11 @@ using UnityEngine.AI;
 public class Slime : MonoBehaviour, IEnemy
 {
     public LayerMask aggroLayerMask;
-    NavMeshAgent navAgent; 
+    NavMeshAgent navAgent;
     public float curHealth;
-
     public float maxHealth = 20;
+
+    public int Experience { get; set; }
 
     private Player player;
     private CharacterStat characterStat;
@@ -17,6 +18,7 @@ public class Slime : MonoBehaviour, IEnemy
 
     void Start()
     {
+        Experience = 20;
         navAgent = GetComponent<NavMeshAgent>();
         characterStat = new CharacterStat(6,10,2);
         curHealth = maxHealth;
@@ -70,9 +72,14 @@ public class Slime : MonoBehaviour, IEnemy
             Die();
         }
     }
-    void Die()
+    public void Die()
     {
+        CombatEvents.EnemyDied(this);
         Destroy(gameObject);
     }
 
+    //void IEnemy.Die()
+    //{
+    //    //throw new System.NotImplementedException();
+    //}
 }
