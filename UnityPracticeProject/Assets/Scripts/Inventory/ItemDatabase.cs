@@ -37,7 +37,7 @@ public class ItemDatabase : MonoBehaviour
                 return item;
             }
         }
-        Debug.LogWarning("couldnt find item" + itemSlug);
+        Debug.LogWarning("couldnt find item " + itemSlug);
         return null;
     }
 }

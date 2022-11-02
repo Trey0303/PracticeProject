@@ -11,6 +11,8 @@ public class Slime : MonoBehaviour, IEnemy
     public float maxHealth = 20;
 
     public int Experience { get; set; }
+    public DropTable DropTable { get; set; }
+    public PickupItem pickupItem;
 
     private Player player;
     private CharacterStat characterStat;
@@ -18,6 +20,14 @@ public class Slime : MonoBehaviour, IEnemy
 
     void Start()
     {
+        DropTable = new DropTable();
+        DropTable.loot = new List<LootDrop>
+        {
+            new LootDrop("Sword", 25),
+            new LootDrop("Staff", 25),
+            new LootDrop("PotionLog", 25)
+        };
+
         Experience = 20;
         navAgent = GetComponent<NavMeshAgent>();
         characterStat = new CharacterStat(6,10,2);
@@ -74,8 +84,21 @@ public class Slime : MonoBehaviour, IEnemy
     }
     public void Die()
     {
+        DropLoot();
         CombatEvents.EnemyDied(this);
         Destroy(gameObject);
+    }
+
+    void DropLoot()
+    {
+        
+        Item item = DropTable.GetDrop();//creates a temp item to store randomly selected item?
+        if(item != null)//checks if there is a item to spawn
+        {
+            Debug.Log("Drop Loot!");
+            PickupItem instance = Instantiate(pickupItem, transform.position, Quaternion.identity);//spawns itemdrop at enemy position
+            instance.ItemDrop = item;//gives item stats?
+        }
     }
 
     //void IEnemy.Die()

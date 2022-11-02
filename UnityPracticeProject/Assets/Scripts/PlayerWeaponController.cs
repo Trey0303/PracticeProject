@@ -72,7 +72,11 @@ public class PlayerWeaponController : MonoBehaviour
 
     public void PerformWeaponAttack()
     {
-        equippedWeapon.PerformAttack(CalculatedDamage());
+        if(equippedWeapon != null)
+        {
+            equippedWeapon.PerformAttack(CalculatedDamage());
+
+        }
     }
 
     public void PerformSpecialWeaponAttack()
