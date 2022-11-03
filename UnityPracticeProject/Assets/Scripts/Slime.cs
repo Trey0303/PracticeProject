@@ -10,6 +10,8 @@ public class Slime : MonoBehaviour, IEnemy
     public float curHealth;
     public float maxHealth = 20;
 
+    public Spawner Spawner { get; set; }
+
     public int Experience { get; set; }
     public DropTable DropTable { get; set; }
     public PickupItem pickupItem;
@@ -86,6 +88,7 @@ public class Slime : MonoBehaviour, IEnemy
     {
         DropLoot();
         CombatEvents.EnemyDied(this);
+        this.Spawner.Respawn();
         Destroy(gameObject);
     }
 
