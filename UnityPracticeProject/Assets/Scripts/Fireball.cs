@@ -13,7 +13,6 @@ public class Fireball : MonoBehaviour
     private void Start()
     {
         Range = 20;
-        Damage = 4;
         spawnPosition = transform.position;
         GetComponent<Rigidbody>().AddForce(Direction * 50);
     }
@@ -24,6 +23,11 @@ public class Fireball : MonoBehaviour
         {
             Extinguish();
         }
+    }
+
+    public void FireballDamage(int damage)
+    {
+        Damage = damage;
     }
 
     private void OnCollisionEnter(Collision col)

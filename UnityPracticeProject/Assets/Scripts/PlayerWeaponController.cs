@@ -74,7 +74,7 @@ public class PlayerWeaponController : MonoBehaviour
     {
         if(equippedWeapon != null)
         {
-            equippedWeapon.PerformAttack(CalculatedDamage());
+            equippedWeapon.PerformAttack(CalculatedDamage());//applies weapons power stat to damage
 
         }
     }

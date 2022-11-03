@@ -19,6 +19,7 @@ public class Staff : MonoBehaviour, IWeapon, IProjectileWeapon
     }
     public void PerformAttack(int damage)
     {
+        CurrentDamage = damage;
         Debug.Log("staff attack!");
         
         animator.SetTrigger("BaseAttack");
@@ -34,6 +35,7 @@ public class Staff : MonoBehaviour, IWeapon, IProjectileWeapon
     {
         Fireball fireballInstance = Instantiate(fireball, ProjectileSpawn.position, ProjectileSpawn.rotation);
         fireballInstance.Direction = ProjectileSpawn.forward;
+        fireballInstance.FireballDamage(CurrentDamage);//apply weapon damage to fireball
     }
 
     

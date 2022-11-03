@@ -75,7 +75,7 @@ public class Slime : MonoBehaviour, IEnemy
 
     public void TakeDamage(int amount)
     {
-        Debug.Log("player takes " + amount + " damage!");
+        Debug.Log("Enemy takes " + amount + " damage!");
         curHealth -= amount;
         if(curHealth <= 0)
         {

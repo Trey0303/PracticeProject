@@ -33,6 +33,17 @@ public class Player : MonoBehaviour
 
     }
 
+    public void Heal(int amount)
+    {
+        Debug.Log("player healed " + amount + " amount");
+        curHealth += amount;
+        if(curHealth > maxHealth)
+        {
+            curHealth = maxHealth;
+        }
+        UIEventHandler.HealthChanged(this.curHealth, this.maxHealth);
+    }
+
     void Die()
     {
         Debug.Log("player dead. reset health");
