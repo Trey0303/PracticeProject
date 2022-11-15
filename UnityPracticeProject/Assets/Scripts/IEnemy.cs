@@ -4,6 +4,7 @@ using UnityEngine;
 
 public interface IEnemy
 {
+    int ID { get; set; }//identifies the enemy for kill quests
     Spawner Spawner { get; set; }
 
     int Experience { get; set; }

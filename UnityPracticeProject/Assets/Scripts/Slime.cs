@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class Slime : MonoBehaviour, IEnemy
 {
+    public int ID { get; set; }
     public LayerMask aggroLayerMask;
     NavMeshAgent navAgent;
     public float curHealth;
@@ -29,7 +30,7 @@ public class Slime : MonoBehaviour, IEnemy
             new LootDrop("Staff", 25),
             new LootDrop("PotionLog", 25)
         };
-
+        ID = 0;
         Experience = 20;
         navAgent = GetComponent<NavMeshAgent>();
         characterStat = new CharacterStat(6,10,2);

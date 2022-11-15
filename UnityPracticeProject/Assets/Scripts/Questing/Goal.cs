@@ -18,9 +18,9 @@ public class Goal
 
     public void Evaluate()
     {
-        if(CurrentAmount >= RequiredAmount)
+        if(CurrentAmount >= RequiredAmount)//if player met requirement
         {
-            Complete();
+            Complete();//complete the quest
         }
     }
 
