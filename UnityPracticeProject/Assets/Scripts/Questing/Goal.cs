@@ -6,6 +6,7 @@ using UnityEngine;
 //and the ability to keep track of an amount of something and compare that to how much is need to complete the quest(quest ex: collect 5 bolts, current amount is 0)
 public class Goal
 {
+    public Quest Quest { get; set; }//assigns a quest to this goal property
     public string Description { get; set; }
     public bool Completed { get; set; }
     public int CurrentAmount { get; set; }
@@ -26,6 +27,8 @@ public class Goal
 
     public void Complete()
     {
+        Quest.CheckGoals();
         Completed = true;
+        Debug.Log("quest is completed");
     }
 }

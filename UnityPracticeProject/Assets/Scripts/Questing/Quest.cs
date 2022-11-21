@@ -17,10 +17,7 @@ public class Quest : MonoBehaviour
     {
         Completed = Goals.All(g => g.Completed); ///this this a simpler way to write out everything thats commmeted out below
 
-        if (Completed)
-        {
-            GiveReward();
-        }
+        
 
         //if (Goals.All(g => g.Completed))//if all goals are completed it will return true. if not then false
         //{
