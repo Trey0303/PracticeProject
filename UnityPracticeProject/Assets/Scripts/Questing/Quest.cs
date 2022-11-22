@@ -30,7 +30,7 @@ public class Quest : MonoBehaviour
     //    Completed = true;
     //}
 
-    void GiveReward()
+    public void GiveReward()
     {
         if(ItemReward != null)
         {
