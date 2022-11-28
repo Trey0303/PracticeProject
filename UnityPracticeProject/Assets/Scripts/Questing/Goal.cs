@@ -29,6 +29,6 @@ public class Goal
     {
         Quest.CheckGoals();
         Completed = true;
-        Debug.Log("quest is completed");
+        Debug.Log("Goal marked as completed");
     }
 }

@@ -109,7 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aggroLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   curHealth: 0
   maxHealth: 20
   pickupItem: {fileID: 7470401700173342161, guid: 9c424f8498d9cba4fa78bf8435b624e0,

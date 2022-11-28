@@ -15,6 +15,7 @@ public class MonsterQuest : Quest
 
         Goals.Add(new KillGoal(this, 0, "kill 5 Slimes", false, 0, 5));
         Goals.Add(new KillGoal(this, 1, "kill 1 Skeleton", false, 0, 1));
+        Goals.Add(new CollectionGoal(this, "PotionLog", "Find a Potion", false, 0, 1));
 
         Goals.ForEach(g => g.Init());
 
