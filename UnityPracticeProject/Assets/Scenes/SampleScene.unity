@@ -2154,7 +2154,7 @@ PrefabInstance:
     - target: {fileID: 5937446363704767788, guid: 77f2121135a7d2f4cae7e27c2d87ac24,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5937446363704767788, guid: 77f2121135a7d2f4cae7e27c2d87ac24,
         type: 3}
@@ -2189,7 +2189,7 @@ PrefabInstance:
     - target: {fileID: 6426034883734204310, guid: 77f2121135a7d2f4cae7e27c2d87ac24,
         type: 3}
       propertyPath: m_Name
-      value: FieldPortal
+      value: Field
       objectReference: {fileID: 0}
     - target: {fileID: 6426034883734204310, guid: 77f2121135a7d2f4cae7e27c2d87ac24,
         type: 3}
@@ -2223,6 +2223,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAgent: {fileID: 0}
+  linkedPortals:
+  - {fileID: 727716691}
+  - {fileID: 1749730992}
 --- !u!65 &420139953
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2914,9 +2917,9 @@ Transform:
   m_LocalPosition: {x: 20.030516, y: 0.4542017, z: 13.779259}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 727716689}
   - {fileID: 1749730990}
   - {fileID: 420139950}
-  - {fileID: 727716689}
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4272,7 +4275,7 @@ PrefabInstance:
     - target: {fileID: 5937446363704767788, guid: 77f2121135a7d2f4cae7e27c2d87ac24,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5937446363704767788, guid: 77f2121135a7d2f4cae7e27c2d87ac24,
         type: 3}
@@ -4307,7 +4310,7 @@ PrefabInstance:
     - target: {fileID: 6426034883734204310, guid: 77f2121135a7d2f4cae7e27c2d87ac24,
         type: 3}
       propertyPath: m_Name
-      value: WellPortal
+      value: Well
       objectReference: {fileID: 0}
     - target: {fileID: 6426034883734204310, guid: 77f2121135a7d2f4cae7e27c2d87ac24,
         type: 3}
@@ -4341,6 +4344,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAgent: {fileID: 0}
+  linkedPortals:
+  - {fileID: 1749730992}
+  - {fileID: 420139952}
 --- !u!65 &727716692
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9479,7 +9485,7 @@ PrefabInstance:
     - target: {fileID: 5937446363704767788, guid: 77f2121135a7d2f4cae7e27c2d87ac24,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5937446363704767788, guid: 77f2121135a7d2f4cae7e27c2d87ac24,
         type: 3}
@@ -9514,7 +9520,7 @@ PrefabInstance:
     - target: {fileID: 6426034883734204310, guid: 77f2121135a7d2f4cae7e27c2d87ac24,
         type: 3}
       propertyPath: m_Name
-      value: CavePortal
+      value: Cave
       objectReference: {fileID: 0}
     - target: {fileID: 6426034883734204310, guid: 77f2121135a7d2f4cae7e27c2d87ac24,
         type: 3}
@@ -9548,6 +9554,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAgent: {fileID: 0}
+  linkedPortals:
+  - {fileID: 727716691}
+  - {fileID: 420139952}
 --- !u!65 &1749730993
 BoxCollider:
   m_ObjectHideFlags: 0
