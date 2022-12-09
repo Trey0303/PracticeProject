@@ -11,7 +11,8 @@ using UnityEngine.AI;
 
 public class WorldInteraction : MonoBehaviour
 {
-    NavMeshAgent playerAgent;
+    [HideInInspector]
+    public NavMeshAgent playerAgent;
 
     private void Start()
     {
